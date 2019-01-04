@@ -11,9 +11,9 @@ var express       =    require("express"),
     User          =    require("./models/user"),
     seedDB        =    require("./seeds")
    
-  var url=process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
-mongoose.connect("url"); //local db name=yelp_camp
-//mongoose.connect("mongodb://Bhavesh:Bm23051997@ds257640.mlab.com:57640/yelpcamp"); //mongoLab db name=yelpcamp
+ 
+//mongoose.connect("mongodb://localhost/yelp_camp"); //local db name=yelp_camp
+mongoose.connect("mongodb://Bhavesh:Bm23051997@ds257640.mlab.com:57640/yelpcamp"); //mongoLab db name=yelpcamp
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
