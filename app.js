@@ -11,7 +11,9 @@ var express       =    require("express"),
     User          =    require("./models/user"),
     seedDB        =    require("./seeds")
     
-mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://Bhavesh:Bm23051997@ds257640.mlab.com:57640/yelpcamp");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(flash());
