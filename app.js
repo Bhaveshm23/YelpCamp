@@ -10,8 +10,9 @@ var express       =    require("express"),
     Comment       =    require("./models/comment"),
     User          =    require("./models/user"),
     seedDB        =    require("./seeds")
-    
-mongoose.connect("process.connect.DATABASEURL"); //local db name=yelp_camp
+   
+  var url=process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect("url"); //local db name=yelp_camp
 //mongoose.connect("mongodb://Bhavesh:Bm23051997@ds257640.mlab.com:57640/yelpcamp"); //mongoLab db name=yelpcamp
 
 app.use(bodyParser.urlencoded({extended: true}));
