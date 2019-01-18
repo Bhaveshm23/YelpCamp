@@ -16,7 +16,7 @@ middlewareObj.checkCampgroundOwnership=function(req,res,next){
                    } else{
                        //foundCampground.author.id -->mongoose Object
                        // user._id --> String 
-                       // So we can use === to compare them
+                       // So we can't use === to compare them
                        if(foundCampground.author.id.equals(req.user._id)){
                              next(); //will go to delete or edit or update   
                        }else{
@@ -44,7 +44,7 @@ middlewareObj.checkCommentOwnership=function(req,res,next){
                    } else{
                        //foundComment.author.id -->mongoose Object
                        // user._id --> String 
-                       // So we can use === to compare them
+                       // So we can't use === to compare them
                        if(foundComment.author.id.equals(req.user._id)){
                              next(); //will go to delete or edit or update   
                        }else{

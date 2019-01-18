@@ -11,3 +11,8 @@
 .delete-form{
     display:inline;
 }
+/*Google Map*/
+#map{
+    height: 480px;
+    width: 100%;
+}
