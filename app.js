@@ -9,6 +9,7 @@ var express       =    require("express"),
     LocalStrategy =    require("passport-local"), 
     Campground    =    require("./models/campground"),
     Comment       =    require("./models/comment"),
+    Review        =    require("./models/review"),
     User          =    require("./models/user"),
     seedDB        =    require("./seeds")
    
@@ -26,6 +27,7 @@ app.use(express.static(__dirname + "/public"));  //for using the stylesheet
 //requiring routes
 var campgroundRoutes  = require("./routes/campgrounds"),
     commentRoutes     = require("./routes/comments"),
+    reviewRoutes      = require("./routes/reviews"),
     indexRoutes       = require("./routes/index");
     
 //PASSPORT CONFIGURATION
@@ -53,6 +55,7 @@ app.use(function(req,res,next){
 app.use(indexRoutes);
 app.use("/campgrounds",campgroundRoutes); //Append /campgrounds to all the campground routes at starting
 app.use("/campgrounds/:id/comments",commentRoutes);
+app.use("/campgrounds/:id/reviews",reviewRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("The YelpCamp Server Has Started!");
