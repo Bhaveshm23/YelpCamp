@@ -1,6 +1,7 @@
 var express = require("express");
 var router =  express.Router();
 var Campground =require("../models/campground");
+var Comment    = require("../models/comment");
 var Review = require("../models/review");
 var middleware = require("../middleware");
 var NodeGeocoder = require('node-geocoder');
@@ -44,8 +45,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
     var lat = data[0].latitude;
     var lng = data[0].longitude;
     var location = data[0].formattedAddress;
-    var newCampground = {name: name, image: image, description: desc, author:author, location: location, lat: lat, lng: lng};
-    // Create a new campground and save to DB
+    var newCampground = {name: name, image: image, description: desc, author:author, location: location, lat: lat, lng: lng};    // Create a new campground and save to DB
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
             console.log(err);
